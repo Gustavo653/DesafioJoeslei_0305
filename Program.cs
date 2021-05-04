@@ -17,6 +17,7 @@ namespace DesafioJoeslei___0305
 
             int vidaJoeslei = 18;
             int valorMinimo = 5, valorMaximo = 8; //Intervalo de dano de Joeslei
+            int resistenciaJoeslei = 2;
 
             int vidaGoblin = 10;
             int valorMinimoGob = 2, valorMaximoGob = 5; //Intervalo de dano de Goblin
@@ -37,7 +38,46 @@ namespace DesafioJoeslei___0305
                         int inimigo = ran.Next(1, 11);
                         if (inimigo <= 7)
                         {
-                           
+                            Console.WriteLine("Seu inimigo é um Goblin");
+                            Console.WriteLine("A luta iniciará em breve");
+                            while (vidaGoblin > 0 || vidaJoeslei > 0)
+                            {
+                                int danoJoeslei = ran.Next(valorMinimo, valorMaximo);
+                                int danoGoblin = ran.Next(valorMinimoGob, valorMaximoGob);
+
+                                Console.WriteLine("Você deseja: 1 - Atacar, 2 - Defender, 3 - Usar item ou 4 - Fugir");
+                                int decisao = int.Parse(Console.ReadLine());
+                                if (decisao == 1)
+                                {
+                                    int danoAtaque = ran.Next(1, 101);
+                                    if (danoAtaque <= 8)
+                                    {
+                                        Console.WriteLine("DANO ORIGINAL: " + danoJoeslei);
+                                        danoJoeslei *= 2;
+                                        Console.WriteLine("DANO DOBRADO: " + danoJoeslei);
+                                    }
+                                    vidaGoblin -= danoJoeslei;
+                                    if (danoJoeslei > vidaGoblin)
+                                    {
+                                        vidaGoblin = 0;
+                                        break;
+                                    }
+                                    vidaJoeslei -= danoGoblin;
+                                    if (danoGoblin > vidaJoeslei)
+                                    {
+                                        vidaJoeslei = 0;
+                                        break;
+                                    }
+                                    Console.WriteLine("Vida restante do Goblin: " + vidaGoblin);
+                                    Console.WriteLine("Vida restante do Joeslei: " + vidaJoeslei);
+                                }
+                                else if (decisao == 2)
+                                {
+                                    
+                                }
+                            }
+                            Console.WriteLine("Vida final do Goblin: " + vidaGoblin);
+                            Console.WriteLine("Vida final do Joeslei: " + vidaJoeslei);
                         }
                         else if (inimigo <= 9)
                         {
