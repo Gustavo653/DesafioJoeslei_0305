@@ -204,6 +204,81 @@ namespace DesafioJoeslei___0305
                         else
                         {
                             Console.WriteLine("Seu inimigo é um Troll");
+                            Console.WriteLine("A luta iniciará em breve");
+                            await Task.Delay(2000);
+                            while (vidaTroll > 0 || vidaJoeslei > 0)
+                            {
+                                int danoJoeslei = ran.Next(valorMinimo, valorMaximo);
+                                int danoTroll = ran.Next(valorMinimoTroll, valorMaximoTroll);
+
+                                Console.WriteLine("Você deseja: 1 - Atacar, 2 - Defender, 3 - Usar item ou 4 - Fugir");
+                                int decisao = int.Parse(Console.ReadLine());
+                                if (decisao == 1)
+                                {
+                                    int danoAtaque = ran.Next(1, 101);
+                                    if (danoAtaque <= 8)
+                                    {
+                                        Console.WriteLine("DANO ORIGINAL: " + danoJoeslei);
+                                        danoJoeslei *= 2;
+                                        Console.WriteLine("DANO DOBRADO: " + danoJoeslei);
+                                    }
+                                    vidaTroll -= danoJoeslei;
+                                    if (danoJoeslei > vidaTroll)
+                                    {
+                                        vidaTroll = 0;
+                                        break;
+                                    }
+                                    vidaJoeslei -= danoTroll;
+                                    if (danoTroll > vidaJoeslei)
+                                    {
+                                        vidaJoeslei = 0;
+                                        break;
+                                    }
+                                    Console.WriteLine("Vida restante do Troll: " + vidaTroll);
+                                    Console.WriteLine("Vida restante do Joeslei: " + vidaJoeslei);
+                                }
+                                else if (decisao == 2)
+                                {
+                                    resistenciaJoeslei *= 2;
+                                    Console.WriteLine("Resistência dobrada: " + resistenciaJoeslei);
+                                    int pularAtaque = ran.Next(1, 11);
+                                    if (pularAtaque <= 4)
+                                    {
+                                        Console.WriteLine("Ataque pulado!");
+                                    }
+                                    else
+                                    {
+                                        vidaJoeslei -= (danoTroll - resistenciaJoeslei);
+                                        if (danoTroll > vidaJoeslei)
+                                        {
+                                            vidaJoeslei = 0;
+                                            break;
+                                        }
+                                        Console.WriteLine("Vida restante do Orc: " + vidaOrc);
+                                        Console.WriteLine("Vida restante do Joeslei: " + vidaJoeslei);
+                                    }
+                                }
+                                else if (decisao == 3)
+                                {
+                                    Console.WriteLine("Função indisponível");
+                                }
+                                else if (decisao == 4)
+                                {
+                                    int fugirAtaque = ran.Next(1, 101);
+                                    if (fugirAtaque <= 35)
+                                    {
+                                        Console.WriteLine("Você conseguiu fugir do ataque!");
+                                        Console.WriteLine("Reiniciando etapa");
+                                        xFloresta--;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Comando inválido");
+                                }
+                            }
+                            Console.WriteLine("Vida final do Troll: " + vidaTroll);
+                            Console.WriteLine("Vida final do Joeslei: " + vidaJoeslei);
                         }
                     }
                     else
