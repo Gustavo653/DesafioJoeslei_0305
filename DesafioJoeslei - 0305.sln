@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioJoeslei - 0305", "DesafioJoeslei - 0305.csproj", "{16511FEC-5AEB-4C66-9F20-5DF8B282D19F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16511FEC-5AEB-4C66-9F20-5DF8B282D19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16511FEC-5AEB-4C66-9F20-5DF8B282D19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16511FEC-5AEB-4C66-9F20-5DF8B282D19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16511FEC-5AEB-4C66-9F20-5DF8B282D19F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {814F49E4-F210-47E2-B758-73B289DA1575}
+	EndGlobalSection
+EndGlobal
