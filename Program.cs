@@ -92,6 +92,18 @@ namespace DesafioJoeslei___0305
                                         Console.WriteLine("Vida restante do Joeslei: " + vidaJoeslei);
                                     }
                                 }
+                                else if (decisao == 3)
+                                {
+                                    Console.WriteLine("Função indisponível");
+                                }
+                                else if (decisao == 4)
+                                {
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Comando inválido");
+                                }
                             }
                             Console.WriteLine("Vida final do Goblin: " + vidaGoblin);
                             Console.WriteLine("Vida final do Joeslei: " + vidaJoeslei);
