@@ -73,7 +73,24 @@ namespace DesafioJoeslei___0305
                                 }
                                 else if (decisao == 2)
                                 {
-                                    
+                                    resistenciaJoeslei *= 2;
+                                    Console.WriteLine("Resistência dobrada: " + resistenciaJoeslei);
+                                    int pularAtaque = ran.Next(1, 11);
+                                    if (pularAtaque <= 4)
+                                    {
+                                        Console.WriteLine("Ataque pulado!");
+                                    }
+                                    else
+                                    {
+                                        vidaJoeslei -= (danoGoblin - resistenciaJoeslei);
+                                        if (danoGoblin > vidaJoeslei)
+                                        {
+                                            vidaJoeslei = 0;
+                                            break;
+                                        }
+                                        Console.WriteLine("Vida restante do Goblin: " + vidaGoblin);
+                                        Console.WriteLine("Vida restante do Joeslei: " + vidaJoeslei);
+                                    }
                                 }
                             }
                             Console.WriteLine("Vida final do Goblin: " + vidaGoblin);
