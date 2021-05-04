@@ -98,7 +98,13 @@ namespace DesafioJoeslei___0305
                                 }
                                 else if (decisao == 4)
                                 {
-
+                                    int fugirAtaque = ran.Next(1, 101);
+                                    if (fugirAtaque <= 35)
+                                    {
+                                        Console.WriteLine("Você conseguiu fugir do ataque!");
+                                        Console.WriteLine("Reiniciando etapa");
+                                        xFloresta--;
+                                    }
                                 }
                                 else
                                 {
